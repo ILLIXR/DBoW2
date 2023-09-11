@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 project(DBoW2_OS3)
 include(ExternalProject)
 
-option(BUILD_DBoW2_OS3   "Build DBoW2"            ON)
+option(BUILD_DBoW2_OS3   "Build DBoW2_OS3"        ON)
 option(BUILD_Demo        "Build demo application" OFF)
 
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
@@ -38,7 +38,7 @@ if(BUILD_DBoW2_OS3)
     set(LIB_SHARED "STATIC")
   endif(WIN32)
   add_library(${PROJECT_NAME} ${LIB_SHARED} ${SRCS})
-  target_include_directories(${PROJECT_NAME} PUBLIC include/DBoW2/ include/)
+  target_include_directories(${PROJECT_NAME} PUBLIC include/DBoW2_OS3/ include/)
   target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
   set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 11)
 endif(BUILD_DBoW2_OS3)
@@ -50,7 +50,7 @@ if(BUILD_Demo)
   file(COPY demo/images DESTINATION ${CMAKE_BINARY_DIR}/)
 endif(BUILD_Demo)
 
-configure_file(src/DBoW2.cmake.in
+configure_file(src/DBoW2_OS3.cmake.in
   "${PROJECT_BINARY_DIR}/DBoW2_OS3Config.cmake" @ONLY)
 
 install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
