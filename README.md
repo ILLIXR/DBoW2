@@ -1,3 +1,8 @@
+ORB_SLAM3 MODIFIED VERSION OF DBoW2
+=====
+
+This repo hosts the modfied version of DBoW2, modified by the authors of ORB-SLAm3 and further adapt to fit the build system in ILLIXR. Thank you [ORB_SLAM3](https://github.com/UZ-SLAMLab/ORB_SLAM3). 
+
 DBoW2
 =====
 
